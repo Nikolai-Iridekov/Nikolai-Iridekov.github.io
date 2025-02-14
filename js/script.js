@@ -7,86 +7,7 @@ const questions = [
         text: "Это была прикольная туса, тебе еще букет невесты вручили)",
         music: "song.mp3"
     },
-    {
-        question: "Где мы впервые познакомились с твоей сестренкой?",
-        answers: ["В торговом центре", "В кафе", "В батутном центре", "У тебя дома"],
-        correct: 2,
-        image: "img/question2.jpg",
-        text: "Злата говорила, что я летаю как птичка)",
-        music: "song.mp3"
-    },
-    {
-        question: "В какой день я сделал тебе предложение?",
-        answers: ["7 июля", "2 июля", "23 июля", "30 июня"],
-        correct: 0,
-        image: "img/question3.jpg",
-        text: "Это был незабываемый момент!",
-        music: "song.mp3"
-    },
-    {
-        question: "Какое озеро мы посетили с твоими друзьями в 2021 году?",
-        answers: ["Потрошиловка", "Шира", "Тускарное", "Иткуль"],
-        correct: 0,
-        image: "img/question4.jpg",
-        text: "Поездка на бабане было веселой)!",
-        music: "song.mp3"
-    },
-    {
-        question: "Что мы пытались найти недалеко от ГЭС и нашли этой зимой?",
-        answers: ["Заброшенный тоннель", "Водопад", "Набережную", "Секретную тропу"],
-        correct: 2,
-        image: "img/question5.jpg",
-        text: "Ну нашли же!",
-        music: "song.mp3"
-    },
-    {
-        question: "Наша свадьба. На какой марке машины нас возили?",
-        answers: ["Ситроен", "Шкода", "Пижо", "Хендай"],
-        correct: 2,
-        image: "img/question6.jpg",
-        text: "Жалко, что так и не поездили на ней зарулем(",
-        music: "song.mp3"
-    },
-    {
-        question: "Прошлым летом мы катались на лодке по Енисею. Сцену из какого фильма мы повторили?",
-        answers: ["Титаник", "Достучаться до небес", "Пираты Карибского моря", "Ромео и Джульетта"],
-        correct: 0,
-        image: "img/question7.jpg",
-        text: "О, как в Титанике!",
-        music: "song.mp3"
-    },
-    {
-        question: "Куда мы ездили отдыхать с моей семьей в новогодние праздники 2021 года?",
-        answers: ["Озеро Белё", "Гладенькая", "Озеро Баланкуль", "Абакан"],
-        correct: 2,
-        image: "img/question8.jpg",
-        text: "По моему, это был первый выезд с моми родственниками)",
-        music: "song.mp3"
-    },
-    {
-        question: "В каком году мы ездили на свадьбу Лёши и Насти?",
-        answers: ["2019", "2020", "2021", "2022"],
-        correct: 2,
-        image: "img/question9.jpg",
-        text: "Как это блоы давно...",
-        music: "song.mp3"
-    },
-    {
-        question: "На юбилее твоей мамы, в какой роли я там был?",
-        answers: ["Фотограф", "Ведущий", "Танцор", "Официант"],
-        correct: 1,
-        image: "img/question10.jpg",
-        text: "Я тогда еще почти не знал твоих родственников, но вроде неплохо справился)",
-        music: "song.mp3"
-    },
-    {
-        question: "При поездке в Аскиз, мы часто посещали пиццерию. Как она называлась?",
-        answers: ["Большой Папа", "Сытый Бай", "Аскизский Папа", "Сытый Папа"],
-        correct: 2,
-        image: "img/question11.jpg",
-        text: "Аскизский Папа — любимое местов Аскизе!",
-        music: "song.mp3"
-    }
+  
 ];
 
 let currentQuestion = 0;
@@ -142,6 +63,16 @@ function nextQuestion() {
         document.getElementById("fullScreenImage").classList.add("hidden");
         loadQuestion();
     } else {
-        alert("Игра завершена!");
+        // Показываем завершающее окошко
+        document.getElementById("gameScreen").classList.add("hidden");
+        document.getElementById("endScreen").classList.remove("hidden");
     }
+}
+
+function restartGame() {
+    // Сбрасываем игру
+    currentQuestion = 0;
+    document.getElementById("endScreen").classList.add("hidden");
+    document.getElementById("authScreen").classList.remove("hidden");
+    document.getElementById("gameScreen").classList.add("hidden");
 }
