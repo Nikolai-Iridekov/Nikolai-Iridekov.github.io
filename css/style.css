@@ -12,11 +12,26 @@ body {
     overflow: hidden;
 }
 
+/* Контейнер авторизации */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+}
+
 /* Фото внутри контейнера, но выше контента */
 #authPhoto {
     width: 100%; /* Делаем фото на всю ширину контейнера */
+    height: auto;
     border-radius: 12px 12px 0 0; /* Закругляем только верхние углы */
     margin-bottom: 10px; /* Добавляем небольшой отступ от текста */
+    object-fit: cover; /* Это позволяет фото нормально растягиваться */
 }
 
 /* Медиа-запрос для мобильных устройств */
@@ -29,17 +44,6 @@ body {
     #authPhoto {
         width: 100%;
     }
-}
-
-.container {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
