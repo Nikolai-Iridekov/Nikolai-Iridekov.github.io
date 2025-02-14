@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра для любимой жены</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Экран авторизации -->
+    <div id="authScreen" class="container">
+        <h1>Любимая жена, приглашаю тебя сыграть в игру, посвященную 14 февраля.</h1>
+        <p>Для того, чтобы убедиться, что это реально ты, напиши дату нашей свадьбы:</p>
+        <input type="text" id="weddingDate" placeholder="ДД.ММ.ГГ" />
+        <button onclick="checkDate()">Продолжить</button>
+        <p id="errorMessage" class="error hidden">Неверная дата. Попробуй еще раз!</p>
+    </div>
+
+    <!-- Экран игры -->
+    <div id="gameScreen" class="container hidden">
+        <div id="questionContainer">
+            <div id="questionImage" class="question-image"></div> <!-- Фон с размытием -->
+            <h1 id="questionText"></h1>
+            <div id="answers"></div>
+        </div>
+    </div>
+
+    <!-- Экран с фотографией -->
+    <div id="fullScreenImage" class="full-screen hidden">
+        <img id="resultImage" src="" alt="">
+        <div id="resultText"></div>
+        <button id="nextQuestionButton" onclick="nextQuestion()">Следующий вопрос</button>
+    </div>
+
+    <div id="wrongAnswerPopup" class="error-popup">Неправильный ответ! Попробуй ещё раз.</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
