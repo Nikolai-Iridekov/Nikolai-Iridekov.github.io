@@ -12,6 +12,25 @@ body {
     overflow: hidden;
 }
 
+/* Фото внутри контейнера, но выше контента */
+#authPhoto {
+    width: 100%; /* Делаем фото на всю ширину контейнера */
+    border-radius: 12px 12px 0 0; /* Закругляем только верхние углы */
+    margin-bottom: 10px; /* Добавляем небольшой отступ от текста */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 85%;
+    }
+
+    #authPhoto {
+        width: 100%;
+    }
+}
+
 .container {
     background: white;
     padding: 40px;
@@ -124,6 +143,44 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     display: none;
+}
+
+/* Контейнер с фотографией */
+#photoContainer {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#photoContainer img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер авторизации */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+    #photoContainer {
+        max-width: 85%;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 85%;
+    }
 }
 
 /* Фон с размытием */
